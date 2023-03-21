@@ -3,8 +3,6 @@
 while(true) {
 let firstTerm = Number(prompt('enter first number', ''));
 let secondTerm = Number(prompt('enter second number', ''));
-console.log(Number.isNaN(firstTerm));
-console.log(Number.isNaN(secondTerm));
 if (Number.isNaN(firstTerm) || Number.isNaN(secondTerm)) {
     alert('Numbers only!')
 } else {
