@@ -145,7 +145,7 @@ out1 = document.querySelector('.out-1');
 
  for (let i = 1; i <= final; i++) {
 for (let j = 1; j <= final; j++ ) {
-outPage = outPage + i + '*' + j + '=' +  j * i + "<br>";
+outPage = outPage + `${i} * ${j} = ${j * i}<br>`;
  }
  outPage = outPage + '<hr>';
 }
