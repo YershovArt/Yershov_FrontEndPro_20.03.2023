@@ -138,4 +138,17 @@ out1 = document.querySelector('.out-1');
 
 // out1.innerHTML = outPage;
 
+// TODO Надрукувати повну таблицю множення від 1 до 10.
+
+ let outPage = ' ';
+ let final = 10;
+
+ for (let i = 1; i <= final; i++) {
+for (let j = 1; j <= final; j++ ) {
+outPage = outPage + i + '*' + j + '=' +  j * i + "<br>";
+ }
+ outPage = outPage + '<hr>';
+}
+ out1.innerHTML = outPage;
+
 
