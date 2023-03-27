@@ -31,8 +31,10 @@ out1 = document.querySelector('.out-1');
 //       out1.innerHTML = outPage;
 
    // TODO Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе).
+let again = true;
+do {
 alert('Would you like to check if a number  is prime?')
-
+let repeater = 0;
 let checker = '';
 let n = 1;
 while (repeater === 0 || isNaN(repeater) === true) {
@@ -46,8 +48,12 @@ checker = n;
 }
 }
 checker === '' ?   alert('Number is  prime') : alert('Number is not prime');
+again = confirm('Would you like to repeat?');
+} while (again);
 
 // TODO Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна).
+//   let again = true;
+//     do {
 //   alert('Check if your number is a result of rising 3 to any power')
 //   let outPage = '';
 //   let repeater = 0;
@@ -65,5 +71,6 @@ checker === '' ?   alert('Number is  prime') : alert('Number is not prime');
 //   console.log(`n: ${n}`)
 //   }
 //    n === 1 ? alert(`Your number is 3 to the power of ${i}`) : alert(`Your number is not a result of rising 3 to a power`);
-
+//   again = confirm('Would you like to repeat?');
+// } while (again);
 
