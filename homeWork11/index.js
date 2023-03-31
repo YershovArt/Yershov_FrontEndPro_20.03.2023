@@ -82,12 +82,19 @@ let string = prompt(`Please input string to process`);
 let deleteLetters = '';
 
 deleteLetters = prompt(`Please input letters that you would like to delete from string. Example: abcd`);
-repeater = confirm(`Would you like to input more letters?`)
 
-let toProcess = string.split('');
-let toDelete = deleteLetters.split('');
+function stringToArray(strings) {
+    let arr = []
+    for(let i = 0; i < strings.length; i++) {
+        arr.push(string[i]);
+    }
+    return arr;
+}
 
-alert(deleteLettersFromString(toProcess, toDelete));
+//let toProcess = string.split('');
+//let toDelete = deleteLetters.split('');
+
+alert(deleteLettersFromString(stringToArray(string), stringToArray(deleteLetters)));
 
 function deleteLettersFromString(arrString, arrDeleteLetters) {
 
