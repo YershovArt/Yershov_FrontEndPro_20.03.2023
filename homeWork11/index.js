@@ -91,9 +91,6 @@ function stringToArray(strings) {
     return arr;
 }
 
-//let toProcess = string.split('');
-//let toDelete = deleteLetters.split('');
-
 alert(deleteLettersFromString(stringToArray(string), stringToArray(deleteLetters)));
 
 function deleteLettersFromString(arrString, arrDeleteLetters) {
@@ -104,6 +101,7 @@ for (let i = 0; i < arrDeleteLetters.length; i++) {
             delete arrString[j];
    }
 }
+
 let newString = ''
 for (let k = 0; k < arrString.length; k++) {
     if (typeof arrString[k] === 'string') {
