@@ -1,3 +1,5 @@
+// TODO Дан масив об'єктів. Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів. І знайти суму всіх балансів користувачів
+
 let users = [
 {
 "index": 0,
@@ -55,8 +57,41 @@ let users = [
 }
 ]
 
-for (let i = 0; i < users.length; i++) {
+function convertToNumber(string) {
+    return +string.slice(1).replace(',','');
+}
 
-        console.log(users[i]['balance']);
+// знайти суму всіх балансів користувачів
+function findSum(obj, convertF) {
+
+    let number = 0;
+    let sum = 0;
+
+    for (let i = 0; i < obj.length; i++) {
+        number = convertF(obj[i]['balance']);
+        sum += number;
+    }
+
+    return sum.toFixed(2);
 
 }
+
+// Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів
+function returnPhone(obj, convertF) {
+
+     let number = 0;
+     let userArr = [];
+
+      for (let i = 0; i < obj.length; i++) {
+           number = convertF(obj[i]['balance']);
+           if (number > 2000) {
+            userArr.push(obj[i]['name'] +" "+obj[i]['phone']);
+           }
+        }
+
+        return userArr;
+
+}
+
+console.log('sum of balance: ' + findSum(users, convertToNumber));
+console.log(returnPhone(users, convertToNumber));
