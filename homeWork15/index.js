@@ -8,13 +8,13 @@
 
 alert(`Would you like to create an array?`);
 
-let arrSize = +prompt(`How many items would you like to insert into your array?`);
+let arrSize = +prompt(`How many items would you like to insert into your array?(Numbers only)`);
 
 let userArr = [];
 
 for (let i = 0; i < arrSize; i++) {
 
-    let item = prompt(`What would be the first item?`, '')
+    let item = prompt(`What would be the ${1+i} item?`, '');
 
      if (isNaN(item)) {
         userArr.push(item);
