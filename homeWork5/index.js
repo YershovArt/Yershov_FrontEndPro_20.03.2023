@@ -12,7 +12,7 @@ if (Number.isNaN(firstNumber) || Number.isNaN(secondNumber) || Number.isNaN(thir
     let sumOfNumbers = firstNumber+secondNumber+thirdNumber;
     alert(`AVERAGE = ${sumOfNumbers/3}`);
 }
-}
+
 
 
 

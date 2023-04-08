@@ -104,7 +104,7 @@ function returnOdd(array) {
              oddArr.push(item);
          }
 
-     return oddArr;
+    return oddArr;
 
 }
 
@@ -126,7 +126,7 @@ function returnMultiplication(array) {
             mult *= item;
         }
 
-        return mult;
+    return mult;
 
 }
 
@@ -143,10 +143,9 @@ function returnMaxAndZero(array, max) {
             } else {
                 maxArr.push(item);
             }
-
         }
 
-        return maxArr;
+return maxArr;
 
 }
 

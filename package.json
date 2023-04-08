@@ -1,0 +1,19 @@
+{
+  "name": "homeworks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YershovArt/Yershov_FrontEndPro_20.03.2023.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YershovArt/Yershov_FrontEndPro_20.03.2023/issues"
+  },
+  "homepage": "https://github.com/YershovArt/Yershov_FrontEndPro_20.03.2023#readme",
+  "description": ""
+}
