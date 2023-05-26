@@ -18,6 +18,7 @@ findPostButton.addEventListener('click',  function () {
         userInfoSpan.innerHTML = 'Please input valid data'
     } else {
         userInfoSpan.innerHTML = 'Post found'
+        olForComments.innerHTML = ''
         findPost(inputField.value)
     }
 } )
@@ -30,7 +31,7 @@ async function findPost(postId= 1) {
             postParagraph.innerHTML = `${data['body']}`
             postTitle.innerHTML = `${data['title']}`
         } else {
-            userInfoSpan.innerHTML = `Server Error ${data.error.message} please contact us for help`
+            userInfoSpan.innerHTML = `Server Error ${result.error.message} please contact us for help`
         }
     } catch (err) {
         console.log(`Fetch error please contact us for help`)
@@ -52,9 +53,9 @@ showPostComments.addEventListener('click', async function showComment() {
             </li> `
     }
         } else {
-            userInfoSpan.innerHTML = `Server Error ${data.error.message} please contact us for help`
+            userInfoSpan.innerHTML = `Server Error ${result.error.message} ,please, contact us for help`
         }
     } catch (err) {
-        console.log(`Fetch error please contact us for help`)
+        console.log(`Fetch error ,please, contact us for help`)
     }
 })
