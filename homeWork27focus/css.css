@@ -1,11 +1,6 @@
-
 .container {
    display: flex;
-
-
 }
-
-
 
 input:focus {
     border-color: aqua;
