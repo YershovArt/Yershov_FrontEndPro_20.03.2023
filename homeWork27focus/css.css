@@ -1,0 +1,14 @@
+
+.container {
+   display: flex;
+
+
+}
+
+
+
+input:focus {
+    border-color: aqua;
+    margin-right: 10px;
+}
+
