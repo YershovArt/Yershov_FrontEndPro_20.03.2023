@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+}
+
+table {
+    margin: 0 auto  ;
+    border-collapse: collapse;
+    font-size: 2rem;
+}
+
+td {
+    border: 2px solid pink;
+}
