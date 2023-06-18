@@ -11,7 +11,7 @@ body {
     transform: translate(-50%, -50%);
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     margin-bottom: 50px;
 }
@@ -29,6 +29,7 @@ body {
     height: 405px;
     overflow: hidden;
     margin: 0 auto;
+
 }
 
 .slider__image {
@@ -37,15 +38,14 @@ body {
     position: absolute;
     opacity: 0;
     transition: all .6s;
+    border-radius: 50%;
 }
 
 .slider .slider__images .current {
     opacity: 1;
 }
 
-.slider__buttons {
-    text-align: center;
-}
+
 
 .prev, .next {
     margin: 20px 50px 0;
