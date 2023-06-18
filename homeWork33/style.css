@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f9f9ff;
+}
+
+.poll {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background: #896e69;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.question {
+    padding: 2%;
+    background: #d55448;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.answers {
+    padding: 2%;
+}
+
+.answer {
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    line-height: 3rem;
+    margin-bottom: 2%;
+    border: 1px solid #ffa577;
+    border-radius: 10px ;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 2rem;
+}
+
+.selected {
+    border: 2px solid #d55448   ;
+}
+
+.counterAdd {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(-50%);
+    color: #f9f9ff;
+    font-size: 50px;
+}
