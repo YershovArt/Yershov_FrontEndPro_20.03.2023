@@ -41,7 +41,8 @@ async function findPost(postId= 1) {
 showPostComments.addEventListener('click', async function showComment() {
     olForComments.innerHTML=``; // clear the tags from previous comments
     try {
-        const result = await fetch(`https://jsonplaceholder.typicode.com/posts/${inputField.value}/comments`)
+        const result = await fetch(`https://jsonplaceholder.typicode.com/posts/${inputField.value}/comments`
+        )
         const postComments = await result.json()
         if(result.status === 200) {
             for (let key in postComments) {
