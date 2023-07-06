@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try by</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+    integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+<!-- header -->
+     <header class="header">
+        <div class="container">
+            <div class="header__wrap">
+            <div class="logo">
+                    <a class="logo__link" href="#">
+                        <div class="logo__picture-wrap">
+                       <img src="pictures/Logo.png" alt="pictureLogo" class="logo__picture">
+                    </div>  
+                        <span class="logo__text">
+                            SCIFY BooksShop
+                        </span>
+                    </a>
+            </div>
+            <form class="menu-message hide" action="#" id="form">
+                <div class="menu-message__cross"></div>
+                <div class="menu-message__container">
+                <p class="menu-message__paragraph">
+                    <label for="clientName" class="menu-message__label">Name*</label>
+                    <input type="text" id="clientName" name="Name" class="menu-message__input _required _name"></input>
+                    <p class="menu-message__error">!field should contain chars from latin alphabet a-z min 1 char max 100</p>
+                </p>
+                <p class="menu-message__paragraph">
+                    <label for="clientSurname" class="menu-message__label">Surname*</label>
+                    <input type="text" id="clientSurname" name="Surname" class="menu-message__input _required _surname"></input>
+                    <p class="menu-message__error">!field should contain chars from latin alphabet a-z min 1 char max 100</p>
+                </p>
+                <p class="menu-message__paragraph">
+                    <label for="phone" class="menu-message__label">Phone number*</label>
+                    <input type="tel" id="phone" name="phone" class="menu-message__input _required _phone"></input>
+                    <p class="menu-message__error">!field should contain valid UKRAINIAN phone number, e.g. +380503331212</p>
+                </p>
+                <p class="menu-message__paragraph">
+                    <div class="menu-message__label">City*</div>
+                    <select class="menu-message__select" name="City" id="City">
+                        <option value="Dnipro">Dnipro</option>
+                        <option value="Kiev">Kiev</option>
+                        <option value="Kharkiv">Kharkiv</option>
+                        <option value="Rivne">Rivne</option>
+                        <option value="Lutsk">Lutsk</option>
+                        <option value="Sumy">Sumy</option>
+                      </select>
+                </p>
+                <p class="menu-message__paragraph">
+                      <div for="delivery" class="menu-message__label">Delivery warehouse*</div>
+                      <select class="menu-message__select" name="Delivery Warehouse" id="delivery" >
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                        </select>
+                </p>
+                <div class="menu-message__section">
+                   <p class="menu-message__paragraph-title">How would you like to pay?</p>
+                   <div class="options">
+                    <div class="options__item">
+                        <input type="radio" name="PaymentType" value="Postpaid" id="Postpaid" class="options__input">
+                        <label  for="Postpaid" class="options__label"><span>Postpaid</span></label>
+                    </div>
+                    <div class="options__item">
+                        <input type="radio" name="PaymentType" value="card" id="card" checked class="options__input">
+                        <label for="card" class="options__label"><span>Card</span></label>
+                    </div>
+                   </div>
+                </div>
+                <p class="menu-message__paragraph">
+                    <label for="Quantity" class="menu-message__label" >Quantity*</label>
+                    <input type="number" id="Quantity" name="Quantity" class="menu-message__input _required _quantity" value="">
+                    <p class="menu-message__error">!field should contain number min 1 max 100</p>
+                </p>
+                <p class="menu-message__paragraph">
+                    <label for="Comment" class="menu-message__label">Comment to order?</label>
+                    <textarea name="Comment" id="Comment" class="menu-message__input"></textarea>
+                </p>
+                <p class="menu-message__paragraph">
+                    <div class="checkbox">
+                        <input name="agreement" type="checkbox" id="agreement" class="checkbox__input _required"></input>
+                        <label for="agreement" class="checkbox__label">I give my consent to the processing of personal data*</label>
+                </div>
+                </p>
+                <p class="menu-message__paragraph menu-message__paragraph-button">
+                    <button type="submit" class="menu-message__button">
+                        submit order</button>
+                </p>
+            </div>
+            </form>
+            <ul class="menu">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">
+                        Log in
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="others/SIngUp.html" class="menu__link">
+                        Sign up
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">
+                        Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+            </div>
+        </header>
+        
+<main class="main">
+    <aside class="aside">
+        <div class="container">
+            <ul class="categories">
+                <li data-category="alternate-history" class="categories__category">Alternate history</li>
+                <li data-category="cyberpunk" class="categories__category">Cyberpunk</li>
+                <li data-category="horrorfiction" class="categories__category">Horror fiction</li>
+                <li data-category="steampunk" class="categories__category">Steampunk</li>
+                <li data-category="space-opera" class="categories__category">Space opera</li>
+            </ul>
+        </div>
+    </aside>
+    <div class="showcase">
+        <div class="container">
+            <ul class="showcase__items">
+                <li class="showcase__items-wrap alternate-history">
+                    <span class="showcase__name">11/22/63</span>
+                        <div class="showcase__picture-wrap">
+                        <img src="pictures/booksPictures/AlternateHistory/1.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">10.99</span>
+                    
+                </li>
+                <li class="showcase__items-wrap alternate-history">
+                    <span class="showcase__name">THE MAN IN THE HIGH CASTLE</span>
+                        <div class="showcase__picture-wrap">
+                        <img src="pictures/booksPictures/AlternateHistory/2.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">9.99</span>
+                </li>
+                <li class="showcase__items-wrap alternate-history">
+                    <span class="showcase__name">HIS MAJESTY DRAGON</span>
+                        <div class="showcase__picture-wrap">
+                        <img src="pictures/booksPictures/AlternateHistory/3.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">8.99</span>
+                </li>
+                <li class="showcase__items-wrap alternate-history">
+                    <span class="showcase__name">THE CALCULATIONG STARS</span>
+                        <div class="showcase__picture-wrap">
+                        <img src="pictures/booksPictures/AlternateHistory/4.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">11.99</span>
+                </li>
+                <li class="showcase__items-wrap alternate-history">
+                    <span class="showcase__name">BABEL</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/AlternateHistory/5.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">12.99</span>
+                </li>
+                <li class="showcase__items-wrap alternate-history">
+                        <span class="showcase__name">DOMINION</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/AlternateHistory/6.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">15.99</span>
+                </li>
+                <li class="showcase__items-wrap cyberpunk">
+                    <span class="showcase__name">ALTERED CARBON</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Cyberpunk/7.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">5.99</span>
+                </li>
+                <li class="showcase__items-wrap cyberpunk">
+                        <span class="showcase__name">NEUROMANCER</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Cyberpunk/8.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">7.99</span>
+                </li>
+                <li class="showcase__items-wrap cyberpunk">
+                    <span class="showcase__name">SNOW CRASH</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Cyberpunk/9.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">7.99</span>
+                </li>
+                <li class="showcase__items-wrap cyberpunk">
+                    <span class="showcase__name">SYNNERS</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Cyberpunk/10.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">20.99</span>
+                </li>
+                <li class="showcase__items-wrap cyberpunk">
+                    <span class="showcase__name">TROUBLE AND HER FRIENDS</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Cyberpunk/11.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">4.99</span>
+                </li>
+                <li class="showcase__items-wrap cyberpunk">
+                    <span class="showcase__name">BURNING CHROME</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Cyberpunk/12.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">15.99</span>
+                </li>
+                <li class="showcase__items-wrap horrorfiction">
+                    <span class="showcase__name">BIRD BOX</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Horrorfiction/birdBox.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">6.99</span>
+                </li>
+                <li class="showcase__items-wrap horrorfiction">
+                    <span class="showcase__name">HOW TO SELL A HOUNTED HOUSE</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Horrorfiction/haunted.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">14.99</span>
+                </li>
+                <li class="showcase__items-wrap horrorfiction">
+                    <span class="showcase__name">IT</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Horrorfiction/it.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">20.99</span>
+                </li>
+                <li class="showcase__items-wrap horrorfiction">
+                    <span class="showcase__name">HOUSE OF LEAVES</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Horrorfiction/leaves.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">3.99</span>
+                </li>
+                <li class="showcase__items-wrap horrorfiction">
+                    <span class="showcase__name">THE ONLY GOOD INDIANS</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Horrorfiction/theOnly.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">17.99</span>
+                </li>
+                <li class="showcase__items-wrap horrorfiction">
+                    <span class="showcase__name">THE FINAL GIRL SUPPORT GROUP</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Horrorfiction/thFInal.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">11.99</span>
+                </li>
+                <li class="showcase__items-wrap space-opera">
+                    <span class="showcase__name">DUNE</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/SpaceOpera/dune.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">9.99</span>
+                </li>
+                <li class="showcase__items-wrap space-opera">
+                    <span class="showcase__name">HYPERION</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/SpaceOpera/hyperion.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">5.99</span>
+                </li>
+                <li class="showcase__items-wrap space-opera">
+                    <span class="showcase__name">ANCILLARY JUSTICE</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/SpaceOpera/justice.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">2.99</span>
+                </li>
+                <li class="showcase__items-wrap space-opera">
+                    <span class="showcase__name">LEVIATHAN WAKES</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/SpaceOpera/leviathan.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">8.99</span>
+                </li>
+                <li class="showcase__items-wrap space-opera">
+                    <span class="showcase__name">THE LONG WAY TO A SMALL, ANGRY PLANET</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/SpaceOpera/longWay.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">11.99</span>
+                </li>
+                <li class="showcase__items-wrap space-opera">
+                    <span class="showcase__name">OLD MANS WAR</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/SpaceOpera/oldMAns.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                  
+                </li>
+                <li class="showcase__items-wrap steampunk">
+                    <span class="showcase__name">ANUBIS GATES</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Steampunk/anubisGates.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">12.99</span>
+                </li>
+                <li class="showcase__items-wrap steampunk">
+                    <span class="showcase__name">BONESHACKER</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Steampunk/boneshaker.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">13.99</span>
+                </li>
+                <li class="showcase__items-wrap steampunk">
+                    <span class="showcase__name">CLOCKWORK PRINCESS</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Steampunk/clockworkP.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">14.99</span>
+                </li>
+                <li class="showcase__items-wrap steampunk">
+                    <span class="showcase__name">THE GIRL IN THE STEEL CORSET</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Steampunk/corset.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">11.99</span>
+                </li>
+                <li class="showcase__items-wrap steampunk">
+                    <span class="showcase__name">MORTAL ENGINES</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Steampunk/mortal.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">5.99</span>
+                </li>
+                <li class="showcase__items-wrap steampunk">
+                    <span class="showcase__name">PERDIDO STREET STATION</span>
+                        <div class="showcase__picture-wrap">
+                            <img src="pictures/booksPictures/Steampunk/street.jpeg" alt="bookPicture" class="showcase__picture">
+                        </div>
+                        <span class="showcase__price">10.99</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="about">
+        <button class="button hide-butoon">BUY BOOK</button>
+    </div>
+</main>
+
+<!-- footer -->
+    <div class="footer">
+        <div class="footer__wrap">
+            <div class="footer__maps"><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33368.5119799986!2d55.277658073556196!3d25.196204899881625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42659897a4f5%3A0xd8d16fd51a2b9040!2sThe%20Green%20Planet!5e0!3m2!1sru!2sua!4v1671454059146!5m2!1sru!2sua"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="footer__map"></iframe>
+                </div>
+            <div class="footer__navigator">
+                <ul class="navigator__list">
+                    <li class="navigator__item">
+                        <a href="#" class="navigator__link">
+                            Log in
+                        </a>
+                    </li>
+                    <li class="navigator__item">
+                        <a href="pages/shop.html" class="navigator__link">
+                            Sign up
+                        </a>
+                    </li>
+                    <li class="navigator__item">
+                        <a href="pages/courses.html" class="navigator__link">
+                            Search
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__about">
+                <ul class="about__list">
+                    <li class="about__item">
+                        <a href="#" class="about__link">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </li>
+                    <li class="about__item">
+                        <a href="#" class="about__link">
+                            <i class="fa-brands fa-viber"></i>
+                        </a>
+                    </li>
+                    <li class="about__item">
+                        <a href="#" class="about__link">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </li>
+                    <li class="about__item">
+                        <a href="https://www.instagram.com/yershovart/" class="about__link" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <p class="copyright__text">
+                Made by Artem 2023
+               
+            </p>
+        </div>
+    </div> 
+<script src="index.js"></script>
+</body>
+</html>

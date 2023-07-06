@@ -1,0 +1,257 @@
+#SIngUpForm * {
+    outline: none;
+}
+
+.form__body {
+    max-width: 900px;
+    min-width: 800px;
+    margin: 10px auto;
+    background-color: #1995AD;
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+.form__title {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.form__item {
+    margin-bottom: 1.5rem;
+}
+
+.form__label {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form__input {
+    height: 3rem;
+    padding: 0 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.form__input:focus {
+    box-shadow: 0 0 15px #26148a;
+}
+
+.form__input._error {
+    box-shadow: 0 0 20px #cc0000;
+}
+
+.form__item._error .form__error {
+    display: block;
+    font-size: 0.9rem;
+    color: #cc0000;
+}  
+
+.form__item._error .signup-checkbox {
+    box-shadow: 0 0 20px #cc0000;
+}  
+
+.form__error {
+   display: none;
+} 
+
+textarea.form__input {
+    min-height: 8rem;
+    resize: vertical;
+    padding: 20px;
+}
+
+.signup-options {
+    padding: 10px 0 0 0;
+}
+
+.signup-options__input {
+    display: none;
+}
+
+.signup-options__input:checked + .signup-options__label::after {
+   transform: scale(1);
+}
+
+.signup-options__label {
+    display: inline-flex;
+    font-size: 1rem;
+    line-height: 140%;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.signup-options__label::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 24px;
+    height: 24px;
+    background-color: #BCBABE;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.signup-options__label::after {
+    transition: transform 0.3s ease 0s;
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 1rem;
+    height: 1rem;
+    background-color: #1995AD;
+    border-radius: 50%;
+    transform: scale(0);
+}
+
+.signup-select {
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    padding: 0 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file__item {
+    position: relative;
+}
+
+.file__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.file__button {
+    display: inline-flex;
+    min-height: 40px;
+    border-radius: 30px;
+    justify-content: center;
+    background-color: #AEBD38;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.file__preview {
+    display: inline-block;
+    max-width: 100px;
+    padding: 10px 0px 0px 0px;
+}
+
+.file__preview img{
+    max-width: 100%;
+}
+
+.signup-checkbox {
+    display: flex;
+    justify-content: space-around;
+}
+
+.signup-checkbox__input {
+    display: none;
+}
+.signup-checkbox__input:checked+.signup-checkbox__label::after {
+    transform: scale(1);
+}
+
+.signup-checkbox__label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 140%;
+    position: relative;
+}
+
+.signup-checkbox__label::before {
+    content: '';
+    flex: 0 0 24px;
+    height: 24px;
+    background-color: #BCBABE;
+    border-radius: 4px;
+    margin: 0px 10px 0px 0px;
+}
+
+.signup-checkbox__label::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: #1995AD;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transform: scale(0);
+    transition: transform 0.5s ease 0;
+}
+
+.form__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color:#AEBD38;
+    color: #F1F1F2;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 0 5px 0 #50533b;
+    transition: background-color 0.5s ease 0s;
+    position: relative;
+    top: 0;
+ }
+
+ .form__button:hover {
+    background-color: #e2ed91;
+ }
+ 
+ .form__button:active {
+    top: 3px;
+    box-shadow: 0 2px 0 black;
+ }
+
+ .hide {
+    display: none;
+    opacity: 1;
+    width: 0;
+    height: 0;
+}
+
+.form-container {
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+   font-size: 2rem;
+   text-align: center;
+   color: #BCBABE;
+} 
+
+.form-container h1{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   font-size: 2rem;
+} 
+
+.form-container p{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+} 
+
+.flex-class {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-element {
+    flex: 1 0 auto;
+}

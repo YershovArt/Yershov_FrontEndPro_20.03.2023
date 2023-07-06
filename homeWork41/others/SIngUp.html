@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try by</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+    integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/signUp.css">
+  
+</head>
+<body>
+<!-- header -->
+     <header class="header header-signup">
+        <div class="container">
+            <div class="header__wrap">
+            <div class="logo">
+                    <a class="logo__link" href="#">
+                        <div class="logo__picture-wrap">
+                       <img src="../pictures/Logo.png" alt="pictureLogo" class="logo__picture">
+                    </div>  
+                        <span class="logo__text">
+                            SCIFY BooksShop
+                        </span>
+                    </a>
+            </div>
+            <ul class="menu">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">
+                        Log in
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="../index.html" class="menu__link">
+                       Main
+                    </a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">
+                        Search
+                    </a>
+                </li>
+            </ul>
+        </div>
+            </div>
+        </header>
+        
+
+        <!-- Ім'я, Прізвище (Текстові поля)
+Дата народження (Текстове поле)
+Стать (radio)
+Місто (select)
+Адреса (textarea)
+Мови, якими володіє (checkbox)
+….
+Кнопка “Зберегти” -->
+
+
+        <form action="#" id="SIngUpForm" class="form__body">
+           
+            <div class="form-container">
+                <h1 class="form__title">
+                    Registration
+                </h1>
+                <div class="form__item">
+                    <label for="formName" class="form__label">Name*</label>
+                    <input type="text" name="name" id="formName" class="form__input _req">
+                    <p class="form__error">!field should contain chars from latin alphabet a-z min 1 char max 100</p>
+                </div>
+                <div class="form__item">
+                    <label for="input.id === 'formSurname'" class="form__label">Surname*</label>
+                    <input type="text" name="surname" id="formSurname" class="form__input _req">
+                    <p class="form__error">!field should contain chars from latin alphabet a-z min 1 char max 100</p>
+                </div>
+                <div class="form__item">
+                    <label for="formFamilyName" class="form__label">Family Name*</label>
+                    <input type="text" name="familyName" id="formFamilyName" class="form__input _req">
+                    <p class="form__error">!field should contain chars from latin alphabet a-z min 1 char max 100</p>
+                </div>
+                <div class="form__item">
+                    <label for="formEmail" class="form__label">Email*</label>
+                    <input type="text" name="email" id="formEmail" class="form__input _req">
+                    <p class="form__error">!field should contain valid email , e.g. alex44@gmail.com or  alex44@gmail.com.ua </p>
+                </div>
+                <div class="form__item">
+                    <label for="formNumber" class="form__label">Phone number*</label>
+                    <input type="tel" name="number" id="formNumber" class="form__input _req">
+                    <p class="form__error">!field should contain valid UKRAINIAN phone number, e.g. +380503331212</p>
+                </div>
+                <div class="form__item">
+                    <div class="form__label">Gender</div>
+                    <div class="signup-options">
+                        <div class="signup-options__item">
+                            <input type="radio" name="gender" value="male" id="formMale" class="signup-options__input"     checked>
+                            <label for="formMale" class="signup-options__label"><span>Male</span></label>
+                        </div>
+                        <div class="signup-options__item">
+                            <input type="radio" name="gender" value="female" id="formFemale" class="signup-options__input">
+                            <label for="formFemale" class="signup-options__label"><span>Female</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <div class="form__label">City</div>
+                    <select name="City" id="" class="signup-select">
+                        <option value="Vinnytsia">Vinnytsia</option>
+                        <option value="Dnipro">Dnipro</option>
+                        <option value="Donetsk">Donetsk</option>
+                        <option value="Zhytomyr">Zhytomyr</option>
+                        <option value="Zaporizhzhia">Zaporizhzhia</option>
+                        <option value="Ivano-Frankivsk">Ivano-Frankivsk</option>
+                        <option value="Kyiv">Kyiv</option>
+                        <option value="Kropyvnytskyi">Kropyvnytskyi</option>
+                        <option value="Luhansk">Luhansk</option>
+                        <option value="Lutsk">Lutsk</option>
+                        <option value="Lviv">Lviv</option>
+                        <option value="Mykolaiv">Mykolaiv</option>
+                        <option value="Odesa">Odesa</option>
+                        <option value="Poltava">Poltava</option>
+                        <option value="Rivne">Rivne</option>
+                        <option value="Sumy">Sumy</option>
+                        <option value="Ternopil">Ternopil</option>
+                        <option value="Uzhhorod">Uzhhorod</option>
+                        <option value="Kharkiv">Kharkiv</option>
+                        <option value="Kherson">Kherson</option>
+                        <option value="Khmelnytskyi">Khmelnytskyi</option>
+                        <option value="Cherkasy">Cherkasy</option>
+                        <option value="Chernivtsi">Chernivtsi</option>
+                        <option value="Chernihiv">Chernihiv</option>
+                    </select>
+                </div>
+                <div class="form__item">
+                    <label for="formAddress" class="form__label">Home address*</label>
+                    <textarea name="address" id="formAddress" class="form__input _req"></textarea>
+                    <p class="form__error">!please fill in your home address</p>
+                </div>
+                <div class="form__item">
+                    <div class="form__label">Languages*</div>
+                    <div class="signup-checkbox">
+                        <div class="signup-checkbox__item">
+                            <input type="checkbox" name="language" value="Ukrainian" id="formUkrainian" class="signup-checkbox__input _req">
+                            <label for="formUkrainian" class="signup-checkbox__label ">Ukrainian</label>
+                        </div>
+                        <div class="signup-checkbox__item">
+                            <input type="checkbox" name="language" value="Polish" id="formPolish" class="signup-checkbox__input _req">
+                            <label for="formPolish" class="signup-checkbox__label ">Polish</label>
+                        </div>
+                        <div class="signup-checkbox__item">
+                            <input type="checkbox" name="language" value="English" id="formEnglish" class="signup-checkbox__input req">
+                            <label for="formEnglish" class="signup-checkbox__label _">English</label>
+                        </div>
+                    </div>
+                    <p class="form__error">!minimum 1 checbox should be checked</p>
+                </div>
+                <button type="submit" class="form__button">Submit</button>
+            </div>
+        </form>
+<!-- footer -->
+    <div class="footer footer-signup">
+        <div class="footer__wrap">
+            <div class="footer__maps"><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33368.5119799986!2d55.277658073556196!3d25.196204899881625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42659897a4f5%3A0xd8d16fd51a2b9040!2sThe%20Green%20Planet!5e0!3m2!1sru!2sua!4v1671454059146!5m2!1sru!2sua"
+                    style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                    class="footer__map"></iframe>
+                </div>
+            <div class="footer__navigator">
+                <ul class="navigator__list">
+                    <li class="navigator__item">
+                        <a href="#" class="navigator__link">
+                            Log in
+                        </a>
+                    </li>
+                    <li class="navigator__item">
+                        <a href="pages/shop.html" class="navigator__link">
+                            Sign up
+                        </a>
+                    </li>
+                    <li class="navigator__item">
+                        <a href="pages/courses.html" class="navigator__link">
+                            Search
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__about">
+                <ul class="about__list">
+                    <li class="about__item">
+                        <a href="#" class="about__link">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </li>
+                    <li class="about__item">
+                        <a href="#" class="about__link">
+                            <i class="fa-brands fa-viber"></i>
+                        </a>
+                    </li>
+                    <li class="about__item">
+                        <a href="#" class="about__link">
+                            <i class="fa-brands fa-google"></i>
+                        </a>
+                    </li>
+                    <li class="about__item">
+                        <a href="https://www.instagram.com/yershovart/" class="about__link" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <p class="copyright__text">
+                Made by Artem 2023
+               
+            </p>
+        </div>
+    </div> 
+<script src="signUp.js"></script>
+</body>
+</html>
