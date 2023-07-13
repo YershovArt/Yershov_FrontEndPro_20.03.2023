@@ -12,7 +12,6 @@ let button = document.querySelector('.button');
 let menu = document.querySelector('.menu-message');
 let menuContainerInitial = document.querySelector('.menu-message__container').outerHTML;
 let menuContainer = document.querySelector('.menu-message__container');
-console.log(menuContainer.innerHTML);
 let cross = document.querySelector('.menu-message__cross');
 let form = document.querySelector('.menu-message');
 let about =  document.querySelector('.about');
@@ -23,11 +22,10 @@ let myOrdersCategory = document.querySelector('.categories__my-orders');
 let ordersCart = document.querySelector('.orders__info');
 
 let a = document.getElementById('formName');
-console.log(a);
 let submitButton = document.querySelector('.menu-message__button')
-function addElement(a) {
+function addElement(itemInformation) {
     about =  document.querySelector('.about');
-    about.innerHTML = a;
+    about.innerHTML = itemInformation;
     about.appendChild(button);
     button.classList.remove('hide-butoon')
 }
@@ -38,9 +36,8 @@ document.querySelector('.categories').addEventListener('click', (event) => {
     all.forEach((element) => {
         if (!element.classList.contains(searchClass)) {
             element.classList.add('hide');
-        } else {
+        } else  {
             element.classList.remove('hide');
-
             }
         }
     )
@@ -48,9 +45,8 @@ document.querySelector('.categories').addEventListener('click', (event) => {
 
 items.addEventListener('click', (event) =>{
     if (event.target.classList.contains('showcase__picture')) {
-        let v = event.target.parentElement.parentElement.innerHTML;
-        console.log(v);
-        addElement(v);
+        let itemInformation = event.target.parentElement.parentElement.innerHTML;
+        addElement(itemInformation);
     } else {
         return false;
     }
@@ -59,9 +55,9 @@ items.addEventListener('click', (event) =>{
 button.addEventListener('click', (event)=> {
     menu.classList.remove('hide'); 
     all.forEach((element) => {
-        if (element.classList.contains('showcase__items-wrap')) {
+        if (element.classList.contains('showcase__items-wrap') && !element.classList.contains('my-orders')) {
             element.classList.remove('hide');
-        }
+        } 
     });   
 });
 
@@ -168,10 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function infomationalWindow (forObject, name, surname, city, delivery, payment, quantity, bookName, price, totalPrice, comment="ok") {
+function infomationalWindow (orderDate, forObject, name, surname, phone, city, delivery, payment, quantity, bookName, price, totalPrice, comment="ok") {
     forObject = {}
     forObject["Name"] = name;
     forObject["Surname"] = surname;
+    forObject["Phone"] = phone;
     forObject["City"] = city;
     forObject["Delivery warehouse"] = delivery;
     forObject["Payment"] = payment;
@@ -180,14 +177,23 @@ function infomationalWindow (forObject, name, surname, city, delivery, payment, 
     forObject["Price"] = price;
     forObject["TotalPrice"] = totalPrice;
     forObject["Comment"] = comment;
-    toLocalStorage(bookName, forObject);
+    saveToLocalStorage(orderDate, forObject);
     return forObject;
 }
 
+function getDate() {
+    let date = new Date();
+    let getMonth = date.getMonth()+1;
+    let processedDate = `${date.getDate()}.${getMonth.toString().padStart(2,'0')}.${date.getFullYear()}.${date.getTime()}`
+    return processedDate;
+}
+
 function collectData() {
+    let orderDate = getDate()
     let clientName = form.clientName.value;
     let forObject = form.clientName.value;
     let clientSurname = form.clientSurname.value;
+    let clientPhone = form.phone.value;
     let selectalue = form.City.value;
     let delivery = form.delivery.value;
     let paiment = form.PaymentType.value;
@@ -196,7 +202,8 @@ function collectData() {
     let price = document.querySelector('.about .showcase__price').textContent;
     let totalPrice = +price * + quantity;
     let textArea = form.Comment.value;
-    let clientOrder =  infomationalWindow(forObject ,clientName, clientSurname, selectalue, delivery, paiment, quantity, bookName, price, totalPrice, textArea);
+    let clientOrder =  infomationalWindow(orderDate, forObject ,clientName, clientSurname, clientPhone,selectalue, delivery, paiment, quantity, bookName, price, totalPrice, textArea);
+   
     menuContainer.innerHTML = '';
     Object.entries(clientOrder).map(([index, item])=> {
     menuContainer.innerHTML+=`
@@ -204,70 +211,113 @@ function collectData() {
         `
     });
     menuContainer.insertAdjacentHTML("afterbegin", `<p class='menu-message__paragraph'>Than you for your Order ${clientOrder["Name"]}</p>`)
-    arr.push(clientOrder);
-    console.log(clientOrder);
-    console.log(arr);
 };
 
-function toLocalStorage(name, object) {
-
+function saveToLocalStorage(name, object) {
     localStorage.setItem(JSON.stringify(name), JSON.stringify(object));
 }
 
 myOrdersCategory.addEventListener('click', function () {
-    ordersCart.innerHTML ='';
-    let arr1 = [];
-    for (let i = 1; i<localStorage.length; i++) {
-        console.log(localStorage.key(i));
-        arr1.push(localStorage.key(i))
+    ordersCart.innerHTML =''; // document.querySelector('.orders__info');
+    let ordersKeys = [];
+    for (let i = 0; i<localStorage.length; i++) {
+        console.log(JSON.parse(localStorage.key(i)));
+        ordersKeys.push(localStorage.key(i))
     }
-    console.log(arr1)
-    let innerTable = document.createElement('table');
+    console.log(ordersKeys)
     let innerUl = document.createElement('ul');
-    arr1.forEach(function (item) {
-       console.log( JSON.parse(localStorage.getItem(item))
+  
+    ordersKeys.forEach(function (item, index) {
+       console.log(JSON.parse(localStorage.getItem(item))
        );
-        innerTable.innerHTML += `
-          
-            <tr>
-                <td>
-                    ${JSON.parse(localStorage.getItem(item))['Book name']}
-                </td>       
-                <td>
-                    ${JSON.parse(localStorage.getItem(item))['Price']}
-                </td>      
-                <td>
-                    ${JSON.parse(localStorage.getItem(item))['Quantity']}
-                </td>  
-                <td>
-                    ${JSON.parse(localStorage.getItem(item))['TotalPrice'].toFixed(2)
-        }
-                </td>      
-                   <td>
-                    <button type="submit" class="delete">Remove</button>
-        
-                </td>
-            </tr>
+       innerUl.innerHTML += `
+            <li class="orders-list__item ${JSON.parse(item)}">
+                <div>
+                    Order date: ${JSON.parse(localStorage.key(item)).split('.').slice(0, 3).join('.')}
+                </div>      
+                <div>
+                Order price: ${JSON.parse(localStorage.getItem(item))['TotalPrice'].toFixed(2)}
+                </div>      
+                <div>
+                    <button type="submit" class="info__button" data-key="${JSON.parse(item)}">Order info</button>
+                </div>
+                <div>
+                    <button type="submit" class="delete__button" data-key="${JSON.parse(item)}">Remove</button>
+                </div>
+            </li>
        `
+    
     });
 
-    ordersCart.appendChild(innerUl).appendChild(innerTable).insertAdjacentHTML('afterbegin',  `
-<tr>
-        <td>
-            'Name of the book'
-        </td>
-        <td>
-            'Price of the book'
-        </td>
-        <td>
-            'Quantity'
-        </td>
-        <td>
-            'Price'
-        </td>
-        <td>
-        Removes
-</td>
-    </tr>`)
+    ordersCart.appendChild(innerUl).classList.add('orders-list');
 
+    document.querySelector('.orders-list').addEventListener('click', function(event) {
+        function addCode() {
+            let html = `
+            <ul class="orders-list__item-additional ">
+            <li class="${event.target.dataset['key']}">
+                <div>
+                    Name: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Name']}
+                </div> 
+                <div>
+                    Surname: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Surname']}
+                </div> 
+                <div>
+                    Phone: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Phone']}
+                </div> 
+                <div>
+                    City: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['City']}
+                </div> 
+                <div>
+                    Delivery warehouse: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Delivery warehouse']}
+                </div> 
+                <div>
+                Book name: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Book name']}
+                </div> 
+                <div>
+                Quantity: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Quantity']}
+                </div> 
+                <div>
+                    Payment: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Payment']}
+                </div> 
+                <div>
+                    Price: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Price']}
+                </div> 
+                <div>
+                    Total price:  ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['TotalPrice'].toFixed(2)}
+                </div> 
+                <div>
+                    Comment: ${JSON.parse(localStorage.getItem(JSON.stringify(event.target.dataset['key'])))['Comment']}
+                </div> 
+                <div>
+                    <button type="submit" class="show-less__button" data-key="${event.target.dataset['key']}">Show Less</button>
+                </div>
+            </li>
+        <ul>
+       `
+       return html;
+    }
+        let targetRow = event.target.dataset['key'];
+        let liRow = document.querySelectorAll('li');
+        let liButton = document.querySelectorAll('div button');
+        console.log(liButton);
+        console.log(liRow);
+        liRow.forEach(function(item) {
+            if (item.classList.contains(targetRow) && event.target.classList.contains('info__button')) {
+                event.target.classList.add('hide');
+                item.insertAdjacentHTML('afterend', addCode());
+            } else if (item.classList.contains(targetRow) && event.target.classList.contains('delete__button')){
+                localStorage.removeItem(JSON.stringify(event.target.dataset['key']));
+                item.innerHTML = ``;
+            } else if (item.classList.contains(targetRow) && event.target.classList.contains('show-less__button')){
+                liButton.forEach(function (item) {
+                    if (item.dataset.key === event.target.dataset.key) {
+                        item.classList.remove('hide')
+                    }
+                })
+                event.target.parentElement.parentElement.outerHTML = '';
+            }
+        });
+    });     
 });
+

@@ -116,41 +116,6 @@ textarea.form__input {
     cursor: pointer;
 }
 
-.file__item {
-    position: relative;
-}
-
-.file__input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    font-size: 0;
-    cursor: pointer;
-}
-
-.file__button {
-    display: inline-flex;
-    min-height: 40px;
-    border-radius: 30px;
-    justify-content: center;
-    background-color: #AEBD38;
-    align-items: center;
-    padding: 0px 20px;
-}
-
-.file__preview {
-    display: inline-block;
-    max-width: 100px;
-    padding: 10px 0px 0px 0px;
-}
-
-.file__preview img{
-    max-width: 100%;
-}
-
 .signup-checkbox {
     display: flex;
     justify-content: space-around;
