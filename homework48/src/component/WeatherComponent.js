@@ -26,7 +26,7 @@ function WeatherComponent() {
 
   return (
     <div className='container'>
-      <h1>Погода у Львові</h1>
+      <h1>Погода у Дніпрі</h1>
       <p>Температура: {data.temperature}°C</p>
       <p>Тиск: {data.pressure}гПа</p>
       <p>Опис: {data.description}</p>
